@@ -34,8 +34,21 @@ class Program
             result2 = Math.Sqrt(sum1);
             Console.WriteLine("Length of Second line is {0}", result2);
 
-            bool Compare = result1.Equals(result2);
-            Console.WriteLine("Lines are equal:-{0}", Compare);
+            //bool Compare = result1.Equals(result2);
+            //Console.WriteLine("Lines are equal:-{0}", Compare);
+
+            if(result1>result2)
+            {
+                Console.WriteLine("First line is greater than second line");
+            }
+            else if(result2>result1)
+            {
+                Console.WriteLine("Second Line is greater than First");
+            }
+            else
+            {
+                Console.WriteLine("Both lines are equal");
+            }
 
         }
     }
