@@ -4,52 +4,44 @@ class Program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("WelCome to Line Comparison Computation Program");
-            //Console.ReadLine();
-            double x1, x2, y1, y2, result1;
-            Console.WriteLine("Enter the x and y coordinate of first point { ");
-             x1=Convert.ToDouble(Console.ReadLine());
-             y1 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter the x and y coordinate of second point { ");
-             x2 = Convert.ToDouble(Console.ReadLine());
-             y2 = Convert.ToDouble(Console.ReadLine());
+            Lcomparison(10, 20, 30, 40, 5, 6, 7, 8);
+        }
 
-            double x = (x2 - x1) * (x2 - x1);
-            double y=(y2-y1)*(y2-y1);
+        public static double Lcomparison(double x1,double y1,double x2,double y2,double a1,double b1,double a2,double b2)
+        {
+            Console.WriteLine("WelCome to Line Comparison Computation Program");
+            double x = Math.Pow(x2 - x1, 2);
+            double y = Math.Pow(y2 - y1, 2);
             double sum = x + y;
-            result1 = Math.Sqrt(sum);
+           double result1 = Math.Sqrt(sum);
             Console.WriteLine("Length of first line is {0}", result1);
 
-            double a1, a2, b1, b2, result2;
-            Console.WriteLine("Enter the x and y coordinate of first point { ");
-            a1 = Convert.ToDouble(Console.ReadLine());
-            b1 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter the x and y coordinate of second point { ");
-            a2 = Convert.ToDouble(Console.ReadLine());
-            b2 = Convert.ToDouble(Console.ReadLine());
-
-            double a = (a2 - a1) * (a2 - a1);
-            double b = (b2 - b1) * (b2 - b1);
+             double a = Math.Pow(a2 - a1, 2);
+            double b = Math.Pow(b2 - b1, 2);
             double sum1 = a + b;
-            result2 = Math.Sqrt(sum1);
+            double result2 = Math.Sqrt(sum1);
             Console.WriteLine("Length of Second line is {0}", result2);
 
-            //bool Compare = result1.Equals(result2);
-            //Console.WriteLine("Lines are equal:-{0}", Compare);
-
-            if(result1>result2)
+           int result = result1.CompareTo(result2);
+            if (result>0)
             {
                 Console.WriteLine("First line is greater than second line");
+
             }
-            else if(result2>result1)
+            else if (result <0)
             {
                 Console.WriteLine("Second Line is greater than First");
+
             }
             else
             {
-                Console.WriteLine("Both lines are equal");
-            }
+               Console.WriteLine("Both lines are equal");
 
+            }
+            return result;
+            //double Compare = result1.Equals(result2);
+            //Console.WriteLine("Lines are equal:-{0}", Compare);
+            //return Compare;
         }
     }
 }
